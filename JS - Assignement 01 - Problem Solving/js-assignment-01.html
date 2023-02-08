@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>JS :: Assignment 01</title>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-primary pb-4"><span class="badge bg-danger">JS</span> Assignment 01</h1>
+
+        <!-- Problem 01 -->
+        <section id="pro-01" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 01 :: <small class="text-muted fs-6">Print a Number</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro01-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro01-btn" onclick="get01Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Number you inserted is :</label>
+                        <input id="pro01-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 02 -->
+        <section id="pro-02" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 02 :: <small class="text-muted fs-6">Divide By 3 &
+                                4</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro02-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro02-btn" onclick="get02Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted number divides by 3 & 4?</label>
+                        <input id="pro02-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 03 -->
+        <section id="pro-03" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 03 :: <small class="text-muted fs-6">Print the Max</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert two numbers
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro03-01-input" class="form-control">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro03-02-input" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro03-btn" onclick="get03Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">The max value you inserted is :</label>
+                        <input id="pro03-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 03 [17][Switch] -->
+        <section id="pro-03s" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 03 [17][Switch] :: <small class="text-muted fs-6">Print the
+                                Max</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert two numbers
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro03s-01-input" class="form-control">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro03s-02-input" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro03s-btn" onclick="get03sResult()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">The max value you inserted is :</label>
+                        <input id="pro03s-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 04 -->
+        <section id="pro-04" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 04 :: <small class="text-muted fs-6">Check Positive /
+                                Negative Values</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro04-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro04-btn" onclick="get04Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted value is :</label>
+                        <input id="pro04-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 04 [19][Switch] -->
+        <section id="pro-04s" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 04s [19][Switch] :: <small class="text-muted fs-6">Check
+                                Positive /
+                                Negative Values</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro04s-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro04s-btn" onclick="get04sResult()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted value is :</label>
+                        <input id="pro04s-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 05 -->
+        <section id="pro-05" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 05 :: <small class="text-muted fs-6">Print the Max &
+                                Min</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert three numbers
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <input type="text" name="" id="pro05-01-input" class="form-control">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="text" name="" id="pro05-02-input" class="form-control">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="text" name="" id="pro05-03-input" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro05-btn" onclick="get05Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="d-block text-muted fw-semibold mb-2">The max value you inserted is
+                                    :</label>
+                                <input id="pro05-01-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col-6">
+                                <label class="d-block text-muted fw-semibold mb-2">The min value you inserted is
+                                    :</label>
+                                <input id="pro05-02-result" class="w-100 form-control" disabled>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 06 -->
+        <section id="pro-06" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 06 :: <small class="text-muted fs-6">Odd or Even?</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro06-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro06-btn" onclick="get06Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted number is :</label>
+                        <input id="pro06-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 06s [18][Switch] -->
+        <section id="pro-06s" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 06s [18][Switch]:: <small class="text-muted fs-6">Odd or
+                                Even?</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro06s-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro06s-btn" onclick="get06sResult()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted number is :</label>
+                        <input id="pro06s-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 07 -->
+        <section id="pro-07" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 07 :: <small class="text-muted fs-6">Vowel or
+                                Consonant?</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert one character
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro07-input" class="form-control" maxlength="1">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro07-btn" onclick="get07Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted character is :</label>
+                        <input id="pro07-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 07s [16][Switch] -->
+        <section id="pro-07s" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 07 [Switch] :: <small class="text-muted fs-6">Vowel or
+                                Consonant?</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert one character
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro07s-input" class="form-control" maxlength="1">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro07s-btn" onclick="get07sResult()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Inserted character is :</label>
+                        <input id="pro07s-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 08 -->
+        <section id="pro-08" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 08 :: <small class="text-muted fs-6">Series numbers to user
+                                Value</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a Number larger than
+                                    [1]</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro08-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro08-btn" onclick="get08Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Form 1 to inserted value :</label>
+                        <input id="pro08-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 09 -->
+        <section id="pro-09" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 09 :: <small class="text-muted fs-6">Multiply to 12</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a Number larger than
+                                    [0]</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro09-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro09-btn" onclick="get09Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Multiply to 12 :</label>
+                        <input id="pro09-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 10 -->
+        <section id="pro-10" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 10 :: <small class="text-muted fs-6">Even numbers to user
+                                Value</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a Number larger than
+                                    [2]</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro10-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro10-btn" onclick="get10Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Even numbers to inserted value :</label>
+                        <input id="pro10-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 11 -->
+        <section id="pro-11" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 11 :: <small class="text-muted fs-6">Calculate the
+                                Power</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert two numbers
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro11-01-input" class="form-control">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro11-02-input" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro11-btn" onclick="get11Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Calculation result :</label>
+                        <input id="pro11-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 11 [Loop]-->
+        <section id="pro-11l" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 11 [Loop] :: <small class="text-muted fs-6">Calculate the
+                                Power</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert two numbers
+                                    below</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro11l-01-input" class="form-control">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" name="" id="pro11l-02-input" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro11l-btn" onclick="get11lResult()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Calculation result :</label>
+                        <input id="pro11l-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 12 -->
+        <section id="pro-12" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 12 :: <small class="text-muted fs-6">Calculate
+                                Result</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <div class="row align-items-end">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">1<sup>st</sup>
+                                                    Sub</label>
+                                                <input type="text" name="" id="pro12-01-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">2<sup>nd</sup>
+                                                    Sub</label>
+                                                <input type="text" name="" id="pro12-02-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">3<sup>rd</sup>
+                                                    Sub</label>
+                                                <input type="text" name="" id="pro12-03-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">d<sup>th</sup>
+                                                    Sub</label>
+                                                <input type="text" name="" id="pro12-04-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">5<sup>th</sup>
+                                                    Sub</label>
+                                                <input type="text" name="" id="pro12-05-input" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro12-btn" onclick="get12Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <div class="row">
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Total Marks :</label>
+                                <input id="pro12-01-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Average Marks :</label>
+                                <input id="pro12-02-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Percentage :</label>
+                                <input id="pro12-03-result" class="w-100 form-control" disabled>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 13 -->
+        <section id="pro-13" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 13 :: <small class="text-muted fs-6">Check Month
+                                Days</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number for a
+                                    month</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro13-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro13-btn" onclick="get13Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">This month is :</label>
+                        <input id="pro13-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 13 [15][Switch] -->
+        <section id="pro-13s" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 13 [Switch] :: <small class="text-muted fs-6">Check Month
+                                Days</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <label for="" class="d-block mb-2 text-info fw-semibold">Insert a number for a
+                                    month</label>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input type="text" name="" id="pro13s-input" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro13s-btn" onclick="get13sResult()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">This month is :</label>
+                        <input id="pro13s-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 14 -->
+        <section id="pro-14" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 14 :: <small class="text-muted fs-6">Calculate
+                                Grade</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <div class="row align-items-end">
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">Physics</label>
+                                                <input type="text" name="" id="pro14-01-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for=""
+                                                    class="d-block mb-2 text-info fw-semibold">Chemistry</label>
+                                                <input type="text" name="" id="pro14-02-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">Biology</label>
+                                                <input type="text" name="" id="pro14-03-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for=""
+                                                    class="d-block mb-2 text-info fw-semibold">Mathematics</label>
+                                                <input type="text" name="" id="pro14-04-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for=""
+                                                    class="d-block mb-2 text-info fw-semibold">Computer</label>
+                                                <input type="text" name="" id="pro14-05-input" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro14-btn" onclick="get14Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <div class="row">
+                            <div class="col">
+                                <label for="" class="d-block text-muted fw-semibold mb-2">Physics</label>
+                                <input id="pro14-01-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Chemistry</label>
+                                <input id="pro14-02-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Biology</label>
+                                <input id="pro14-03-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Mathematics</label>
+                                <input id="pro14-04-result" class="w-100 form-control" disabled>
+                            </div>
+                            <div class="col">
+                                <label class="d-block text-muted fw-semibold mb-2">Computer</label>
+                                <input id="pro14-05-result" class="w-100 form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem 20 -->
+        <section id="pro-20" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="border rounded p-3">
+                        <h2 class="text-danger fs-4">Problem 20 :: <small class="text-muted fs-6">Simple
+                                Calculator</small>
+                        </h2>
+                        <form action="" class="pro">
+                            <div class="form-group">
+                                <div class="row align-items-end">
+                                    <div class="col-9">
+                                        <div class="row gx-3">
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">First
+                                                    Number</label>
+                                                <input type="text" name="" id="pro20-01-input" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for=""
+                                                    class="d-block mb-2 text-info fw-semibold text-white">-</label>
+                                                <div class="d-flex gap-1">
+                                                    <button id="btn-plus" onclick="getOperator(this.id)"
+                                                        class="btn btn-primary fs-4 py-0 px-2" type="button">+</button>
+                                                    <button id="btn-minus" onclick="getOperator(this.id)"
+                                                        class="btn btn-primary fs-4 py-0 px-2" type="button">−</button>
+                                                    <button id="btn-times" onclick="getOperator(this.id)"
+                                                        class="btn btn-primary fs-4 py-0 px-2" type="button">✕</button>
+                                                    <button id="btn-div" onclick="getOperator(this.id)"
+                                                        class="btn btn-primary fs-4 py-0 px-2" type="button">÷</button>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="d-block mb-2 text-info fw-semibold">Second
+                                                    Number</label>
+                                                <input type="text" name="" id="pro20-02-input" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="pro20-btn" onclick="get20Result()" type="button"
+                                            class="btn btn-info w-100 fw-semibold text-capetalize text-white">Show
+                                            Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border rounded p-3 res h-100">
+                        <h2 class="w-100 text-success fs-4">Result</h2>
+                        <label class="d-block text-muted fw-semibold mb-2">Calculation :</label>
+                        <input id="pro20-result" class="w-100 form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
