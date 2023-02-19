@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+
+    <title>JS :: Assignment 04 => Secure Login</title>
+</head>
+
+<body style="background: url(../assets/imgs/login-bg.jpg) center center / cover no-repeat; min-height: 100vh;">
+    <header class="border-bottom" style="background-color: #eee;">
+        <div class="container">
+            <div class="py-3 d-flex justify-content-between align-items-center">
+                <h1 class="text-primary m-0 fs-4"><span class="badge bg-danger">JS</span> <span
+                        class="text-muted">Assignment</span>
+                    <span class="border rounded-4 px-2 text-danger bg-white">04</span> ::
+                    Secure Login
+                </h1>
+                <a href="../index.html" style="font-size: 1.5rem;" class="text-muted" title="Back to Home"><i
+                        class="fa fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Bookmarker -->
+        <section class="d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 70px)">
+            <div class="row align-items-center" style="min-width: 100%;">
+                <div class="col-12">
+                    <div class="col-4 offset-4">
+                        <h1 style="text-shadow: 0 1px 1px rgba(255,255,255,.5);"
+                            class="fs-4 p-3 text-info rounded-top m-0 border-bottom bg-warning text-dark text-center">
+                            Smart Login System
+                        </h1>
+                        <form id="log-form" class="bg-white rounded-bottom shadow p-3 text-center" action=""
+                            style="min-height: 315px;" onsubmit="validate()">
+                            <h2 class="fs-4 py-3 text-primary">
+                                <span class="fa-stack text-muted">
+                                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                    <i class="fa-solid fa-arrow-right-to-bracket text-white fa-stack-1x fa-inverse"></i>
+                                </span> SIGN IN
+                            </h2>
+                            <div class="form-group mb-3">
+                                <input class="form-control py-2" type="email" placeholder="Enter Your Email"
+                                    id="userMail">
+                                <small class="text-danger text-start d-block "></small>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input class="form-control py-2" type="password" placeholder="Enter Your Password"
+                                    id="userPass">
+                                <small class="text-danger text-start d-block "></small>
+                            </div>
+                            <div class="form-group mb-3">
+                                <button type="submit"
+                                    class="btn btn-sm btn-info fs-6 w-100 p-2 text-uppercase fw-semibold text-white"
+                                    id="submit-log-user">Login</button>
+                            </div>
+                            <p class="text-muted">Don't have an account? <a class="text-info fw-semibold"
+                                    href="js-assignment-04-REG.html">Signup</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="js/scripts-log.js"></script>
+</body>
+
+</html>
