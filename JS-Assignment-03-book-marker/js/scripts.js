@@ -3,7 +3,7 @@ var bookmarkName = document.getElementById("bookmarkName");
 var siteURL = document.getElementById("siteURL");
 var bookmarkSubmit = document.getElementById("submit-bookmark");
 var bookmarkUpdate = document.getElementById("update-bookmark");
-var bookmarkList, elToSaveEdits, urlResult;
+var bookmarkList, elToSaveEdits, nameResult, urlResult;
 
 // Load Array from local storage -*/
 if (localStorage.getItem('bookmarks') == null) {
