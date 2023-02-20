@@ -3,7 +3,7 @@ var userMail = document.getElementById("userMail");
 var userPass = document.getElementById("userPass");
 var userSubmit = document.getElementById("submit-log-user");
 var logForm = document.getElementById("log-form");
-var logout, usersList, userPassResult;
+var logout, usersList, userMailResult;
 
 // Load Array from local storage -*/
 if (localStorage.getItem('users') == null) {
@@ -29,7 +29,7 @@ if (localStorage.getItem('users') == null) {
 userSubmit.addEventListener("click", function (e) {
     e.preventDefault();
     validate();
-    if (userMailResult && userPassResult && userMail.value && userPass.value) {
+    if (userMailResult && userPass.value) {
         for (i = 0; i < usersList.length; i++) {
             if (userMail.value.toLowerCase() == usersList[i].mail) {
                 if (userPass.value == usersList[i].pass) {
@@ -37,36 +37,34 @@ userSubmit.addEventListener("click", function (e) {
                     localStorage.setItem('users', JSON.stringify(usersList))
                     successLogin()
                 } else {
-                    document.querySelector('#userPass + small').innerHTML = "Please insert a valid password"
+                    document.querySelector('#userMail + small').innerHTML = "";
+                    document.querySelector('#userPass + small').innerHTML = "Password not match email address"
                 }
+                break;
             } else {
-                document.querySelector('#userMail + small').innerHTML = "Please insert a valid Email address";
-                document.querySelector('#userPass + small').innerHTML = "Please insert a valid password";
+                document.querySelector('#userMail + small').innerHTML = "Mail address didn't found!";
             }
         }
-
     }
 });
 
 // Validate Functions --------------------------*/
 function validate() {
     var mailRGES = /[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/;
-    var passRGES = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,12})/;
     userMailResult = mailRGES.test(userMail.value);
-    userPassResult = passRGES.test(userPass.value);
     if (userMailResult == false || !userMail.value) {
         document.querySelector('#userMail + small').innerHTML = "Please insert a valid Email address"
     } else {
         document.querySelector('#userMail + small').innerHTML = ""
     }
-    if (userPassResult == false || !userPass.value) {
-        document.querySelector('#userPass + small').innerHTML = "Please insert a valid password"
+    if (!userPass.value) {
+        document.querySelector('#userPass + small').innerHTML = "Please insert password"
     } else {
         document.querySelector('#userPass + small').innerHTML = ""
     }
-    if (userMailResult == false && userPassResult == false) {
+    if (userMailResult == false && !userPass.value) {
         document.querySelector('#userMail + small').innerHTML = "Please insert a valid Email address";
-        document.querySelector('#userPass + small').innerHTML = "Please insert a valid password";
+        document.querySelector('#userPass + small').innerHTML = "Please insert password";
     }
 }
 

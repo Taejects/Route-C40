@@ -4,7 +4,7 @@ var userMail = document.getElementById("userMail");
 var userPass = document.getElementById("userPass");
 var userSubmit = document.getElementById("submit-reg-user");
 var regForm = document.getElementById("reg-form");
-var usersList, userPassResult;
+var usersList, userNameResult, userMailResult, userPassResult;
 
 // Load Array from local storage -*/
 if (localStorage.getItem('users') == null) {
@@ -47,10 +47,12 @@ userSubmit.addEventListener("click", function (e) {
     validate();
     // First registration, no local storage created:
     if (localStorage.getItem('users') == null) {
-        addUser();
+        if (userNameResult && userMailResult && userPassResult) {
+            addUser();
+        }
     } else {
         // Already local storage has saved data:
-        if (userNameResult && userMailResult && userPassResult && userName.value && userMail.value && userPass.value) {
+        if (userNameResult && userMailResult && userPassResult) {
             for (i = 0; i < usersList.length; i++) {
                 if (userMail.value == usersList[i].mail) {
                     document.querySelector('#userMail + small').innerHTML = "This mail address is already registered";
@@ -66,12 +68,12 @@ userSubmit.addEventListener("click", function (e) {
 
 // Validate Functions --------------------------*/
 function validate() {
-    var nameRGES = /^$|^\S+.*/;
-    var mailRGES = /[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/;
-    var passRGES = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,12})/;
-    userNameResult = nameRGES.test(userName.value);
-    userMailResult = mailRGES.test(userMail.value);
-    userPassResult = passRGES.test(userPass.value);
+    var nameRGEX = /^$|^\S+.*/;
+    var mailRGEX = /[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/;
+    var passRGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,12})/;
+    userNameResult = nameRGEX.test(userName.value);
+    userMailResult = mailRGEX.test(userMail.value);
+    userPassResult = passRGEX.test(userPass.value);
     if (userNameResult == false || !userName.value) {
         document.querySelector('#userName + small').innerHTML = "Please insert a valid Name"
     } else {
@@ -95,7 +97,7 @@ function validate() {
 }
 // Success Login -------------------------------*/
 function successLogin() {
-    regForm.classList.add("d-flex", "flex-column", "align-items-center", "justify-content-center");
+    regForm.classList.add("d-flex", "flex-column", "align-items-center", "justify-content-end");
     regForm.style.background = "url('../assets/imgs/welcome.png') center 12% / 38% no-repeat";
     regForm.innerHTML = `
         <div class="alert alert-success text-center m-0 w-100">
