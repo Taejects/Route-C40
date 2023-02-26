@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>JS :: Assignment 05 => Weather API</title>
+</head>
+
+<body style="min-height: 100vh;">
+    <header class="border-bottom" style="background-color: #eee;">
+        <div class="container">
+            <div class="py-3 d-flex justify-content-between align-items-center">
+                <h1 class="text-primary m-0 fs-4"><span class="badge bg-danger">JS</span> <span
+                        class="text-muted">Assignment</span>
+                    <span class="border rounded-4 px-2 text-danger bg-white">05</span> ::
+                    Weather API
+                </h1>
+                <a href="../index.html" style="font-size: 1.5rem;" class="text-muted" title="Back to Home"><i
+                        class="fa fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Weather API -->
+        <section class="d-flex flex-wrap align-items-center justify-content-center align-content-center py-4">
+            <!-- Search Form -->
+            <div class="weather-search w-100 mb-5">
+                <form action="" class="w-50 m-auto position-relative">
+                    <div class="form-group rounded-5 bg-white d-flex p-2 shadow">
+                        <input id="location-value" type="text" class="form-control border-0 px-3 rounded-5"
+                            placeholder="Type city name and press SEARCH button">
+                        <button id="location-submit" type="submit"
+                            class="text-uppercase fw-semibold btn text-white btn-lg btn-info rounded-5">Search</button>
+                    </div>
+                    <div class="search-result list-group position-absolute top-100 w-100 start-0 shadow"></div>
+                    <div class="alert alert-danger mt-3 mb-0 rounded-5" style="display: none;"><i
+                            class="fa fa-times-circle me-2 fs-4 align-middle"></i>No
+                        such
+                        search term ...</div>
+                </form>
+            </div>
+            <div class="wrapper border border-2 border-muted rounded-3 w-100 p-2 position-relative">
+                <div class="loader" style="display: flex;"><img src="../assets/imgs/weather-loader.gif" alt=""></div>
+                <div class="row my-0 g-2">
+                    <div class="col-3 m-0">
+                        <div id="location">
+                            <div
+                                class="wrapper rounded-2 p-3 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fa-solid fa-earth-americas"></i>
+                                <h1 class="cityName fs-2 mb-0 mt-1"></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0">
+                        <div id="today-info"
+                            class="wrapper d-flex align-items-center justify-content-center rounded-2 w-100">
+                            <div class="weather-widget">
+                                <h2 class="fs-4"></h2>
+                                <p class="cityTime"></p>
+                                <p class="cityTemp fs-3 text-warning fw-semibold"></p>
+                                <p class="cityCond fw-semibold mt-2 d-flex flex-column-reverse m-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0">
+                        <div id="tmrow-info"
+                            class="wrapper d-flex align-items-center justify-content-center rounded-2 w-100">
+                            <div class="weather-widget">
+                                <h2 class="fs-4"></h2>
+                                <p class="cityTime"></p>
+                                <p class="cityTemp fs-3 text-warning fw-semibold"></p>
+                                <p class="cityCond fw-semibold mt-2 d-flex flex-column-reverse m-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0">
+                        <div id="afterTmrow-info"
+                            class="wrapper d-flex align-items-center justify-content-center rounded-2 w-100">
+                            <div class="weather-widget">
+                                <h2 class="fs-4"></h2>
+                                <p class="cityTime"></p>
+                                <p class="cityTemp fs-3 text-warning fw-semibold"></p>
+                                <p class="cityCond fw-semibold mt-2 d-flex flex-column-reverse m-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
