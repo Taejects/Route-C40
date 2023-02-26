@@ -13,13 +13,13 @@ String.prototype.splice = function (idx, rem, str) {
 const successCallback = (position) => {
     lat = position.coords.latitude;
     long = position.coords.longitude;
-    fetchLocation = `http://api.weatherapi.com/v1/forecast.json?key=0172ce68918244b8ac1104938232202&q=${lat},${long}&days=3`;
+    fetchLocation = `https://api.weatherapi.com/v1/forecast.json?key=0172ce68918244b8ac1104938232202&q=${lat},${long}&days=3`;
     fetchAPI(fetchLocation)
 };
 
 // Set Default Location ------------------- */
 const errorCallback = (error) => {
-    fetchLocation = `http://api.weatherapi.com/v1/forecast.json?key=0172ce68918244b8ac1104938232202&q=London&days=3`;
+    fetchLocation = `https://api.weatherapi.com/v1/forecast.json?key=0172ce68918244b8ac1104938232202&q=London&days=3`;
     fetchAPI(fetchLocation)
 };
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -98,7 +98,7 @@ document.getElementById("location-submit").addEventListener("click", function (e
         document.querySelector(".search-result").innerHTML = "";
         document.querySelector("#location-value").style.backgroundSize = "24px";
         locValue = document.querySelector("#location-value").value;
-        fetchLocation = `http://api.weatherapi.com/v1/search.json?key=0172ce68918244b8ac1104938232202&q=${locValue}`;
+        fetchLocation = `https://api.weatherapi.com/v1/search.json?key=0172ce68918244b8ac1104938232202&q=${locValue}`;
         search(fetchLocation)
     } else {
         document.querySelector(".alert").style.display = "block";
@@ -118,7 +118,7 @@ function listSearchResult(resultItems) {
 function fetchResult(lat, long) {
     /* SHOW Loader Block*/
     document.querySelector(".loader").style.display = "flex";
-    fetchAPI(`http://api.weatherapi.com/v1/forecast.json?key=0172ce68918244b8ac1104938232202&q=${lat},${long}&days=3`);
+    fetchAPI(`https://api.weatherapi.com/v1/forecast.json?key=0172ce68918244b8ac1104938232202&q=${lat},${long}&days=3`);
     document.querySelector(".search-result").innerHTML = "";
     document.querySelector("#location-value").value = "";
 
