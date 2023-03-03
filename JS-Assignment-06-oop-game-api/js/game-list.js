@@ -12,6 +12,7 @@ function selectCategory() {
   for (let category of gameCategories) {
     category.addEventListener("click", (e) => {
       selectedCategory = e.target.value;
+      console.log(selectedCategory);
       url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedCategory}`;
       getGames(url);
     });
