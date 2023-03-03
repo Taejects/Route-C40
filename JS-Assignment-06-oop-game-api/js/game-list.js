@@ -1,21 +1,29 @@
-let selectedCategory, url, gamesResult;
+let url, gamesResult;
 
-export class GameCard {
+export class GameCategory {
   constructor() {
-    selectCategory();
-    this.gameCategory = selectedCategory;
+    /* Array from categories form radio buttons */
+    this.gameCategories = Array.from(document.getElementsByName("game-category"));
+    /* Check which option is checked by default [1st option] */
+    this.selectedCategory = this.gameCategories.find((input) => input.checked).value;
+    console.log(this.selectedCategory);
+    /* Assign check value to API function */
+    url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${this.selectedCategory}`;
+    getGames(url);
+    /* Run selectCategory function */
+    this.selectCategory();
   }
-}
 
-function selectCategory() {
-  let gameCategories = Array.from(document.getElementsByName("game-category"));
-  for (let category of gameCategories) {
-    category.addEventListener("click", (e) => {
-      selectedCategory = e.target.value;
-      console.log(selectedCategory);
-      url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedCategory}`;
-      getGames(url);
-    });
+  /* Loop function to add Event Listener and call API function with the new category value*/
+  selectCategory() {
+    for (let category of this.gameCategories) {
+      category.addEventListener("click", (e) => {
+        this.selectedCategory = e.target.value;
+        console.log(this.selectedCategory);
+        url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${this.selectedCategory}`;
+        getGames(url);
+      });
+    }
   }
 }
 

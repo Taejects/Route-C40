@@ -1,5 +1,5 @@
-import { GameCard } from "./game-list.js";
-new GameCard();
+import { GameCategory } from "./game-list.js";
+new GameCategory();
 
 // Setting Variables -------------------------- */
 let detailsResult;
