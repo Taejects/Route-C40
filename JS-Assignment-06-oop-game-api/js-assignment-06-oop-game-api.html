@@ -35,45 +35,116 @@
     <div class="container">
       <!-- OOP Game API -->
 
-      <nav class="nav bg-dark text-white d-flex justify-content-between p-4">
-        <a href="" class="brand">GAME REVIEWS</a>
-        <form action="" id="category-select">
-          <ul class="d-flex gap-5 list-inline m-0">
+      <nav
+        class="nav bg-dark mb-3 text-white d-flex justify-content-between p-4 rounded-bottom border-bottom border-secondary"
+      >
+        <h3 class="p-0 m-0">
+          <a href="#!" class="badge bg-warning text-decoration-none fw-semibold">GAME REVIEWS</a>
+        </h3>
+        <form action="" id="genre-select">
+          <ul class="d-flex gap-2 list-inline m-0">
             <li>
-              <label for="mmorpg">
-                <input type="radio" name="game-category" value="mmorpg" id="mmorpg" checked />
+              <label class="btn btn-warning" for="mmorpg">
+                <input
+                  type="radio"
+                  class="d-none"
+                  name="game-genre"
+                  value="mmorpg"
+                  id="mmorpg"
+                  checked
+                />
                 Mmorpg
               </label>
             </li>
             <li>
-              <label for="shooter">
-                <input type="radio" name="game-category" value="shooter" id="shooter" />
+              <label class="btn btn-outline-warning" for="shooter">
+                <input type="radio" class="d-none" name="game-genre" value="shooter" id="shooter" />
                 Shooter
               </label>
             </li>
             <li>
-              <label for="sailing">
-                <input type="radio" name="game-category" value="sailing" id="sailing" />
+              <label class="btn btn-outline-warning" for="sailing">
+                <input type="radio" class="d-none" name="game-genre" value="sailing" id="sailing" />
                 Sailing
               </label>
             </li>
             <li>
-              <label for="permadeath">
-                <input type="radio" name="game-category" value="permadeath" id="permadeath" />
+              <label class="btn btn-outline-warning" for="permadeath">
+                <input
+                  type="radio"
+                  class="d-none"
+                  name="game-genre"
+                  value="permadeath"
+                  id="permadeath"
+                />
                 Permadeath
               </label>
             </li>
             <li>
-              <label for="superhero">
-                <input type="radio" name="game-category" value="superhero" id="superhero" />
+              <label class="btn btn-outline-warning" for="superhero">
+                <input
+                  type="radio"
+                  class="d-none"
+                  name="game-genre"
+                  value="superhero"
+                  id="superhero"
+                />
                 Superhero
               </label>
             </li>
           </ul>
         </form>
       </nav>
+
+      <section id="games-list" class="row"></section>
+      <div
+        id="loader"
+        class="d-flex position-fixed align-items-center justify-content-center bg-dark bg-opacity-75 start-0 top-0 w-100 h-100"
+      >
+        <img src="../assets/imgs/search-loader.gif" alt="" />
+      </div>
     </div>
 
+    <!-- Game Details in Bootstrap Modal -->
+    <div
+      id="game-details"
+      class="modal d-none fade bg-dark bg-opacity-75 position-fixed top-0 start-0 w-100 h-100 align-items-center justify-content-center"
+    >
+      <div class="modal-dialog modal-dialog-scrollable flex-grow-1">
+        <div class="modal-content">
+          <div class="modal-header bg-secondary text-white">
+            <h1 class="modal-title text-white fs-5 text-primary"></h1>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="game-thumb mb-3">
+              <img class="w-100 rounded" src="" alt="" />
+            </div>
+            <ul class="game-info d-flex flex-column gap-1 list-unstyled">
+              <li class="game-category pb-2 border-bottom">
+                <div class="badge bg-info text-white me-2">Category</div>
+                <span></span>
+              </li>
+              <li class="game-platform pb-2 border-bottom">
+                <div class="badge bg-info text-white me-2">Platform</div>
+                <span></span>
+              </li>
+              <li class="game-status pb-2 border-bottom">
+                <div class="badge bg-info text-white me-2">Status</div>
+                <span></span>
+              </li>
+            </ul>
+            <p class="game-desc pb-3 mb-3 border-bottom"></p>
+            <div class="text-center">
+              <a class="game-show btn fw-semibold btn-info text-white" href="#!"
+                >Show Game <i class="fa-solid fa-up-right-from-square ms-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/bootstrap.min.js"></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
