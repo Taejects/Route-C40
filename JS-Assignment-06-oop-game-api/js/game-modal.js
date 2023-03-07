@@ -3,7 +3,6 @@ import { loaderDisplay, loaderHide } from "./game-loader.js";
 class GameModal {
   constructor(gameDetails) {
     this.gameDetails = gameDetails;
-    console.log(this.gameDetails);
     this.title = document.querySelector("#game-details .modal-title");
     this.featureImage = document.querySelector("#game-details .game-thumb img");
     this.genre = document.querySelector("#game-details .game-category span");
@@ -41,12 +40,9 @@ export function selectGame() {
     singleGame.addEventListener("click", async function (e) {
       e.stopPropagation();
       loaderDisplay();
-      console.log(e.target);
       let gameID = this.getAttribute("data-id");
-      console.log(gameID);
       let url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${gameID}`;
       let gameDetails = await getGameDetails(url);
-      console.log(gameDetails);
       new GameModal(gameDetails);
       loaderHide();
     });

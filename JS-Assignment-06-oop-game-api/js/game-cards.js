@@ -4,7 +4,6 @@ import { loaderDisplay, loaderHide } from "./game-loader.js";
 
 export class GameCards {
   constructor(gamesList) {
-    console.log(gamesList[0]);
     this.gamesList = gamesList;
     this.featureImage;
     this.title;

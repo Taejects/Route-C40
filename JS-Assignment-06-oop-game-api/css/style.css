@@ -28,6 +28,11 @@ p {
   transition: all 0.2s linear;
 }
 
+#games-list .game-feature-img {
+  height: 175px;
+  object-fit: cover;
+}
+
 #games-list a:hover {
   box-shadow: 0 0 5px #000;
   transform: translateY(-10px);

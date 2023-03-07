@@ -32,13 +32,11 @@ export class GameGenre {
         this.parentElement.classList.add("btn-warning");
 
         this.selectedGenre = e.target.value;
-        console.log(this.selectedGenre);
         this.url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${this.selectedGenre}`;
         gamesList = await getGenre(this.url);
         document.querySelector(".container").innerHTML += gamesList[0].title;
         new GameCards(gamesList);
         selectGame();
-        console.log(gamesList);
         loaderHide();
       });
     }
