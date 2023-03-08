@@ -1,0 +1,86 @@
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
+
+.hero-section {
+  height: 35vh;
+  min-height: 500px;
+  background: url(../../assets/imgs/js-banner.png) center top / cover no-repeat;
+}
+
+.hero-section:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#menu-toggle {
+  max-width: fit-content;
+  left: 0;
+  z-index: 9;
+}
+
+#offcanvas {
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  min-width: 150px;
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#acc-tabs h3 {
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+#acc-tabs h3:hover {
+  background: #0ba0be !important;
+}
+
+.tab-content {
+  padding: 10px 15px;
+  background: #fafafa;
+  display: none;
+}
+
+#countdown {
+  background: url(../../assets/imgs/time-bg.jpg) center center / cover no-repeat #eee;
+}
+
+#countdown .wrapper .wrapper {
+  position: relative;
+}
+
+#countdown .row .col-3:not(:last-child) .wrapper:after {
+  display: block;
+  height: 60px;
+  width: 0px;
+  background: #ccc;
+  content: "";
+  position: absolute;
+  top: calc(50% - 15px);
+  right: 0;
+  box-shadow: 0 0 5px #ccc;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #bbb;
+}
+
+#countdown .wrapper .wrapper p {
+  min-height: 60px;
+}
+
+#countdown .container > .wrapper {
+  background: rgba(255, 255, 255, 0.9);
+}
