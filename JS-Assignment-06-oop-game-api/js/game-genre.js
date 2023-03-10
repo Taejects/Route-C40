@@ -34,7 +34,6 @@ export class GameGenre {
         this.selectedGenre = e.target.value;
         this.url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${this.selectedGenre}`;
         gamesList = await getGenre(this.url);
-        document.querySelector(".container").innerHTML += gamesList[0].title;
         new GameCards(gamesList);
         selectGame();
         loaderHide();
