@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>JS :: Exam => Yummy</title>
+  </head>
+
+  <body style="min-height: 100vh">
+    <header class="border-bottom position-relative z-index-1" style="background-color: #eee">
+      <div class="container">
+        <div class="py-3 d-flex justify-content-between align-items-center">
+          <h1 class="text-primary m-0 fs-4">
+            <span class="badge bg-danger">JS</span> <span class="text-danger">Exam</span>
+            :: Yummy
+          </h1>
+          <a href="../index.html" style="font-size: 1.5rem" class="text-muted" title="Back to Home"
+            ><i class="fa fa-home"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Offcanvas Navigation -->
+      <aside
+        id="offcanvas"
+        class="d-flex flex-row-reverse position-fixed top-0 h-100 bg-dark text-white"
+      >
+        <div
+          class="sidebar text-center d-flex flex-column justify-content-between py-4 px-2 bg-light"
+        >
+          <!-- Site Logo -->
+          <a class="site-logo" href="#!">
+            <img src="../assets/imgs/yummy-logo.png" alt="Yummy" />
+          </a>
+          <!-- Menu Tolgger -->
+          <a id="menu-toggler" href="#!">
+            <i class="fa fa-bars fa-2xl"></i>
+          </a>
+          <!-- Bottom Icon -->
+          <a id="share" href="#!">
+            <i class="fa-solid fa-share-nodes fa-2xl"></i>
+          </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="p-4 d-flex align-items-center">
+          <ul class="list-unstyled">
+            <li><a id="home" href="#!">home</a></li>
+            <li><a id="search" href="#!">Search</a></li>
+            <li><a id="getCategories" href="#!">Categories</a></li>
+            <li><a id="getAreas" href="#!">Area</a></li>
+            <li><a id="getIngs" href="#!">Ingredients</a></li>
+            <li><a id="contact" href="#!">Contact Us</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- END Offcanvas Navigation -->
+
+      <!-- Searh Form -->
+      <form action="" id="search-meals">
+        <div class="wrapper p-2 bg-light rounded my-4">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <div class="form-group">
+                <input
+                  id="by-letter"
+                  type="text"
+                  class="form-control"
+                  placeholder="Search by First Letter"
+                />
+              </div>
+            </div>
+            <div class="col-2 text-center">
+              <i class="fa fa-arrow-left mx-3"></i>
+              OR
+              <i class="fa fa-arrow-right mx-3"></i>
+            </div>
+            <div class="col-5">
+              <div class="form-group">
+                <input
+                  id="by-name"
+                  type="text"
+                  class="form-control"
+                  placeholder="Search by Meal Name"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- END Searh Form -->
+
+      <!-- Main Playground -->
+      <section id="listing" class="row"></section>
+      <!-- END Main Playground -->
+
+      <!-- Site Loader -->
+      <div
+        id="loader"
+        class="d-flex position-fixed align-items-center justify-content-center bg-dark bg-opacity-75 start-0 top-0 w-100 h-100"
+      >
+        <img src="../assets/imgs/search-loader.gif" alt="" />
+      </div>
+      <!-- END Site Loader -->
+    </div>
+
+    <!-- Meal Details in Bootstrap Modal -->
+    <div
+      id="meal-details"
+      class="modal d-none fade bg-dark bg-opacity-75 position-fixed top-0 start-0 w-100 h-100 align-items-center justify-content-center"
+    >
+      <div class="modal-dialog modal-dialog-scrollable flex-grow-1">
+        <div class="modal-content">
+          <div class="modal-header bg-secondary text-white">
+            <h1 class="modal-title text-white fs-5 text-primary"></h1>
+            <button type="button" class="btn-close bg-white"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="meal-thumb mb-3"><img class="w-100 rounded" src="" alt="" /></div>
+            <div class="meal-instructions">
+              <h4>Instructions</h4>
+              <p></p>
+            </div>
+
+            <ul class="meal-info d-flex flex-column gap-1 list-unstyled">
+              <li class="meal-category pb-2 border-bottom">
+                <div class="badge bg-info text-white me-2">Meal Category</div>
+                <span></span>
+              </li>
+              <li class="meal-area pb-2 border-bottom">
+                <div class="badge bg-info text-white me-2">Meal Area</div>
+                <span></span>
+              </li>
+              <li class="meal-tags pb-2 border-bottom">
+                <div class="badge bg-info text-white me-2">Meal Tags</div>
+                <span></span>
+              </li>
+            </ul>
+
+            <div class="recipes-wrapper">
+              <h4>Recipes</h4>
+              <ul class="meal-recipes d-flex flex-wrap gap-2 m-0 list-unstyled"></ul>
+            </div>
+            <p class="meal-desc pb-3 mb-3 border-bottom"></p>
+            <div class="text-center">
+              <a class="meal-source btn fw-semibold btn-info text-white" target="_blank" href="#!">
+                Source <i class="fa-solid fa-up-right-from-square ms-2"></i>
+              </a>
+              <a
+                class="meal-youtube btn fw-semibold btn-danger text-white"
+                target="_blank"
+                href="#!"
+              >
+                Youtube <i class="fa-solid fa-up-right-from-square ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Meal Details -->
+
+    <!-- Contact Form -->
+    <div
+      id="contact-modal"
+      class="modal d-none fade bg-dark bg-opacity-75 position-fixed top-0 start-0 w-100 h-100 align-items-center justify-content-center"
+    >
+      <div class="modal-dialog modal-dialog-scrollable flex-grow-1">
+        <div class="modal-content">
+          <div class="modal-header bg-secondary text-white">
+            <h1 class="modal-title text-white fs-5 text-primary">Contact Us</h1>
+            <button type="button" class="btn-close bg-white"></button>
+          </div>
+          <div class="modal-body">
+            <form action="" id="contact-form">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="user"
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter Your Name"
+                      onblur="validateUser()"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="email"
+                      class="form-control"
+                      type="email"
+                      placeholder="Enter Your Email"
+                      onblur="validateEmail()"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="phone"
+                      class="form-control"
+                      type="tel"
+                      placeholder="Enter Your Phone"
+                      onblur="validatePhone()"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="age"
+                      class="form-control"
+                      type="number"
+                      placeholder="Enter Your Age"
+                      onblur="validateAge()"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="pass"
+                      class="form-control"
+                      type="password"
+                      placeholder="Enter Your Password"
+                      onblur="validatePass()"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="pass-confirm"
+                      class="form-control"
+                      type="password"
+                      placeholder="Repeat Password"
+                      onblur="validateConfirmPass()"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="col-12 text-center mb-2">
+                  <button id="submit" class="btn btn-info fw-semibold text-white" disabled>
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Contact Form -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

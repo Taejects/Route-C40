@@ -1,0 +1,152 @@
+body {
+  background: url(../../assets/imgs/yummy-bg.jpg) center bottom fixed no-repeat;
+}
+header {
+  z-index: 1;
+}
+
+#listing {
+  padding-bottom: 30px;
+}
+
+#offcanvas {
+  z-index: 2;
+}
+
+#offcanvas nav {
+  display: none;
+  left: 0;
+  position: relative;
+}
+
+.sidebar .site-logo img {
+  max-width: 48px;
+}
+
+nav li {
+  position: relative;
+  top: 300px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #666;
+}
+
+nav a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  line-height: 32px;
+}
+
+#menu-toggler {
+  color: #fd8a00;
+}
+
+.container {
+  max-width: 992px;
+}
+
+section > .wrapper {
+  box-shadow: none;
+  background: #fff;
+}
+
+.row .col-4 {
+  margin: 0;
+}
+
+#loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#loader img {
+  width: 48px;
+}
+
+.meal-info .badge {
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 4px;
+  width: 125px;
+  text-align: center;
+}
+
+.category-description,
+.ing-description {
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+#search-meals {
+  transition: all 0.2s linear;
+}
+
+#search-meals:not(.active) {
+  margin-bottom: -70px;
+  transform: translateY(-200%);
+}
+
+.reg-success {
+  min-height: 400px;
+}
+
+#contact-form span {
+  line-height: normal;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+.recipes-wrapper {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.recipes-wrapper li {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background: #fff;
+  white-space: nowrap;
+}
+
+h2[class*="-title"] {
+  text-align: center;
+  font-size: 18px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.category-feature-img {
+  margin-top: 10;
+}
+
+.ing-feature-img,
+.area-feature-img {
+  padding: 20px 15px 15px;
+}
+
+.modal-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 20px;
+  width: 100%;
+}
