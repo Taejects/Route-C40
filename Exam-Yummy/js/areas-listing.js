@@ -13,7 +13,7 @@ export class AreaCard {
     areaCard.innerHTML = `
     <a href="#!" class="d-flex flex-column rounded-3 h-100 text-dark area-card bg-white text-decoration-none" data-title="${this.title}">
       <div class="area-feature-img position-relative">
-          <img src="../../assets/imgs/area-icon.png" class="img-fluid">          
+          <img src="../assets/imgs/area-icon.png" class="img-fluid">          
         </div>
       <div class="area-info p-3 d-flex flex-column flex-grow-1">
           <h2 class="area-title fs-5 text-danger">${this.title}</h2>               
