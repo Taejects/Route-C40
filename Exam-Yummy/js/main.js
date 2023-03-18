@@ -116,8 +116,15 @@ function closeOffcanvas() {
   offcanvas.animate({ left: -navWidth }, 500);
 }
 
+/*Escape to close modal*/
 $(document).on("keydown", function (e) {
   if (e.key === "Escape") {
     $(".modal.show:not(#contact-modal)").removeClass("show d-flex").addClass("d-none");
   }
+});
+
+/*Navigation Active item*/
+$("nav a").click(function () {
+  $(this).parent().parent().find(".active").removeClass("active");
+  $(this).addClass("active");
 });
