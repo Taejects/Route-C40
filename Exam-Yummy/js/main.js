@@ -124,7 +124,7 @@ $(document).on("keydown", function (e) {
 });
 
 /*Navigation Active item*/
-$("nav a").click(function () {
+$("nav a:not(#contact)").click(function () {
   $(this).parent().parent().find(".active").removeClass("active");
   $(this).addClass("active");
 });
