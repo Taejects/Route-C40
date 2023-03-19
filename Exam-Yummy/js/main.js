@@ -1,26 +1,28 @@
 import { CategoriesList } from "./category-listing.js";
-import { fetchMeals } from "./meals-random.js";
-import { fetchAreas } from "./areas-get.js";
-import { fetchIngs } from "./ingred-get.js";
+import { fetchMeals } from "./meals-get.js";
+import { fetchAreasIngs } from "./areas-ings-get.js";
 import { searchMeals } from "./search.js";
 
 /* Call API for First Time, Filling Homepage with Random Meals */
-fetchMeals();
+let homeURL = "https://themealdb.com/api/json/v1/1/search.php?s=";
+fetchMeals(homeURL);
 $("#search-meals").removeClass("active");
 
 /* Areas Menu Item Trigger */
 $("#getAreas").click(function () {
   toTop();
-  /* Call for listing all categories */
-  fetchAreas();
+  /* Call for listing all areas */
+  let areasURL = "https://themealdb.com/api/json/v1/1/list.php?a=list";
+  fetchAreasIngs(areasURL, "area");
   $("#search-meals").removeClass("active");
 });
 
 /* Ingredients Menu Item Trigger */
 $("#getIngs").click(function () {
   toTop();
-  /* Call for listing all categories */
-  fetchIngs();
+  /* Call for listing all ingredients */
+  let ingURL = "https://themealdb.com/api/json/v1/1/list.php?i=list";
+  fetchAreasIngs(ingURL, "ing");
   $("#search-meals").removeClass("active");
 });
 
@@ -77,7 +79,7 @@ function toTop() {
 }
 
 $(".site-logo, #home").click(function () {
-  fetchMeals();
+  fetchMeals(homeURL);
   $("#search-meals").removeClass("active");
 });
 

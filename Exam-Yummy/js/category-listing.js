@@ -1,23 +1,13 @@
-// import { MealCards } from "./meal-cards.js";
-// import { selectMeal } from "./meal-modal.js";
-// import { loaderDisplay, loaderHide } from "./meal-loader.js";
 import { emptyList, loaderDisplay, loaderHide } from "./app-addons.js";
-import { selectMeal } from "./meal-object.js";
-
-// loaderDisplay();
-// loaderHide();
+import { fetchMeals } from "./meals-get.js";
+import { CategoryCard } from "./category-card.js";
+import { fetchAreasIngs } from "./areas-ings-get.js";
 
 // Fetch All Categories ---------------------------- */
-/* Loop Result */
-
-import { CategoryCard } from "./category-card.js";
-import { MealCard } from "./meals-listing.js";
-import { MealObject } from "./meal-object.js";
-
 export class CategoriesList {
   constructor() {
     this.url = "https://themealdb.com/api/json/v1/1/categories.php";
-    this.getAllCategories(this.url);
+    fetchAreasIngs(this.url, "category");
   }
 
   /* Get All Categories Array from API */
@@ -34,14 +24,13 @@ export class CategoriesList {
       for (let category of slicedResult) {
         countStart++;
         new CategoryCard(category);
-        // new SingleCategory(category);
         if (countStart === countEnd) {
           let categoriesList = Array.from(document.querySelectorAll("#listing a"));
           for (let oneCategory of categoriesList) {
             oneCategory.addEventListener("click", function (e) {
               let categoryTitle = this.getAttribute("data-title");
               let categoryURL = `https://themealdb.com/api/json/v1/1/filter.php?c=${categoryTitle}`;
-              selectCategory(categoryURL);
+              fetchMeals(categoryURL);
             });
           }
         }
@@ -51,35 +40,4 @@ export class CategoriesList {
     }
     loaderHide();
   }
-}
-
-async function selectCategory(url) {
-  emptyList();
-  loaderDisplay();
-  let categoryResponse = await fetch(url);
-  if (categoryResponse.ok && 400 != categoryResponse.status) {
-    let categoryMeals = await categoryResponse.json();
-    let categoryMealsArray = categoryMeals.meals;
-    let slicedResult = categoryMealsArray.slice(0, 20);
-    for (let meal of slicedResult) {
-      new MealCard(meal);
-    }
-    /* Add Event Listener to Every Single Meal Card */
-    let countStart = 0;
-    let countEnd = slicedResult.length;
-    for (let meal of slicedResult) {
-      countStart++;
-      if (countStart === countEnd) {
-        let mealsList = Array.from(document.querySelectorAll("#listing a"));
-        for (let oneMeal of mealsList) {
-          oneMeal.addEventListener("click", function () {
-            let mealID = this.getAttribute("data-id");
-            let mealURL = `https://themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`;
-            selectMeal(mealURL);
-          });
-        }
-      }
-    }
-  }
-  loaderHide();
 }

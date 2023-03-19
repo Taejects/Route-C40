@@ -9,7 +9,6 @@ export class CategoryCard {
     this.thumb = category.strCategoryThumb;
     this.url = `www.themealdb.com/api/json/v1/1/filter.php?c=${this.title}`;
     this.createCategoryCard();
-    // new SingleCategory(url);
   }
   createCategoryCard() {
     loaderDisplay();

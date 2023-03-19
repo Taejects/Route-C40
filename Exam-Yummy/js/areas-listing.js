@@ -1,6 +1,3 @@
-import { MealCard } from "./meals-listing.js";
-import { emptyList, loaderDisplay, loaderHide } from "./app-addons.js";
-
 export class AreaCard {
   constructor(area) {
     this.title = area.strArea;

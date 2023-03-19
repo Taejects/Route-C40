@@ -1,5 +1,3 @@
-import { emptyList, loaderDisplay, loaderHide } from "./app-addons.js";
-
 class MealModal {
   constructor(mealDetails) {
     this.mealDetails = mealDetails;
@@ -31,35 +29,4 @@ class MealModal {
       document.querySelector("#meal-details").classList.add("d-none");
     });
   }
-}
-
-export function selectGame() {
-  let listedGames = Array.from(document.querySelectorAll("#games-list a"));
-  /* Loop function to add Event Listener and call API function to show Game Details*/
-  for (let singleGame of listedGames) {
-    singleGame.addEventListener("click", async function (e) {
-      e.stopPropagation();
-      loaderDisplay();
-      let gameID = this.getAttribute("data-id");
-      let url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${gameID}`;
-      let gameDetails = await getGameDetails(url);
-      new GameModal(gameDetails);
-      loaderHide();
-    });
-  }
-}
-
-// Fetch Game Details ------------------------- */
-async function getGameDetails(urlGameID) {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "0cd674e85dmsh771e31f91a60d94p184433jsn468596cfa9b4",
-      "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-    },
-  };
-
-  let detailsResponse = await fetch(urlGameID, options);
-  let detailsResults = await detailsResponse.json();
-  return detailsResults;
 }

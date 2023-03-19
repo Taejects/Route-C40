@@ -2,22 +2,21 @@ import { MealCard } from "./meals-listing.js";
 import { selectMeal } from "./meal-object.js";
 import { emptyList, loaderDisplay, loaderHide } from "./app-addons.js";
 
-/* Get meals of every single ingredient */
-export async function selectIngred(inglURL) {
+export async function fetchMeals(url) {
   loaderDisplay();
-  let ingResponse = await fetch(inglURL);
-  if (ingResponse.ok && 400 != ingResponse.status) {
-    let ingData = await ingResponse.json();
-    let ingDetails = ingData.meals;
-    let slicedIngDetails = ingDetails.slice(0, 20);
+  let APIresponse = await fetch(url);
+  if (APIresponse.ok && 400 != APIresponse.status) {
+    let result = await APIresponse.json();
+    let resultArray = result.meals;
+    let slicedResult = resultArray.slice(0, 20);
     emptyList();
-    for (let meal of slicedIngDetails) {
+    for (let meal of slicedResult) {
       new MealCard(meal);
     }
     /* Add Event Listener to Every Single Meal Card */
     let countStart = 0;
-    let countEnd = ingData.meals.length;
-    for (let meal of ingData.meals) {
+    let countEnd = slicedResult.length;
+    for (let meal of slicedResult) {
       countStart++;
       if (countStart === countEnd) {
         let mealsList = Array.from(document.querySelectorAll("#listing a"));
