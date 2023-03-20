@@ -31,6 +31,7 @@ $("#getCategories").click(function () {
   toTop();
   /* Call for listing all categories */
   fetchAreasIngs(categoriesURL, "category");
+  $("#search-meals").removeClass("active");
 });
 
 /* Search Menu Item Trigger */
