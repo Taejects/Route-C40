@@ -23,7 +23,6 @@ export class MealCard {
       </div>
     </a>
     `;
-
     document.querySelector("#listing").append(mealCard);
     loaderHide();
   }

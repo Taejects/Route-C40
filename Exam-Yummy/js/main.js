@@ -1,4 +1,3 @@
-import { CategoriesList } from "./category-listing.js";
 import { fetchMeals } from "./meals-get.js";
 import { fetchAreasIngs } from "./areas-ings-get.js";
 import { searchMeals } from "./search.js";
@@ -27,11 +26,11 @@ $("#getIngs").click(function () {
 });
 
 /* Categories Menu Item Trigger */
+let categoriesURL = "https://themealdb.com/api/json/v1/1/categories.php";
 $("#getCategories").click(function () {
   toTop();
   /* Call for listing all categories */
-  new CategoriesList();
-  $("#search-meals").removeClass("active");
+  fetchAreasIngs(categoriesURL, "category");
 });
 
 /* Search Menu Item Trigger */
@@ -79,8 +78,14 @@ function toTop() {
 }
 
 $(".site-logo, #home").click(function () {
+  toTop();
   fetchMeals(homeURL);
   $("#search-meals").removeClass("active");
+});
+
+$(".site-logo").click(function () {
+  $("nav .active").removeClass("active");
+  $("#home").addClass("active");
 });
 
 /* Nav Animation */

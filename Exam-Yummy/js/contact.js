@@ -113,7 +113,6 @@ $("#submit").click(function () {
 $(document).on("keydown", function (e) {
   if (e.key === "Escape") {
     if ($("#contact-modal").hasClass("show")) {
-      console.log("has");
       closeContact(0, 0);
     }
   }

@@ -2,6 +2,8 @@ import { MealCard } from "./meals-listing.js";
 import { selectMeal } from "./meal-object.js";
 import { emptyList, loaderDisplay, loaderHide } from "./app-addons.js";
 
+let mealsList;
+
 export async function searchMeals(url) {
   loaderDisplay();
   let APIresponse = await fetch(url);
@@ -15,23 +17,16 @@ export async function searchMeals(url) {
 
       for (let meal of slicedResult) {
         new MealCard(meal);
+        mealsList = Array.from(document.querySelectorAll("#listing a"));
       }
 
       /* Add Event Listener to Every Single Meal Card */
-      let countStart = 0;
-      let countEnd = slicedResult.length;
-      for (let meal of slicedResult) {
-        countStart++;
-        if (countStart === countEnd) {
-          let mealsList = Array.from(document.querySelectorAll("#listing a"));
-          for (let oneMeal of mealsList) {
-            oneMeal.addEventListener("click", function () {
-              let mealID = this.getAttribute("data-id");
-              let mealURL = `https://themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`;
-              selectMeal(mealURL);
-            });
-          }
-        }
+      for (let oneMeal of mealsList) {
+        oneMeal.addEventListener("click", function () {
+          let mealID = this.getAttribute("data-id");
+          let mealURL = `https://themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`;
+          selectMeal(mealURL);
+        });
       }
       loaderHide();
     } else {

@@ -19,7 +19,6 @@ export class IngredCard {
       </div>
     </a>
     `;
-
     document.querySelector("#listing").append(ingCard);
   }
 }
